@@ -2,6 +2,8 @@ package docker.demo1;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RestController;
 
 @SpringBootApplication
 public class Demo1Application {
@@ -10,4 +12,11 @@ public class Demo1Application {
         SpringApplication.run(Demo1Application.class, args);
     }
 
+    @RestController
+    class HelloController {
+        @GetMapping("/")
+        public String hello() {
+            return "Hello, World!";
+        }
+    }
 }
